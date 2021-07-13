@@ -1,4 +1,4 @@
-//created array for tweets, each line is a single tweet;
+//from assignment C .created array for tweets, each line is a single tweet;
 var tweets = ["My favorite colour is purple.",
 "Going on a trip to Calgary, see you in 3 days!",
 "I got a puppy today it's name is Luna, she's a corgi.",
@@ -10,7 +10,16 @@ var tweets = ["My favorite colour is purple.",
 "People with air conditioning don't appreciate it enough! What i would do for one of those...", 
 "I Can't beleive its already July, this summer is flying by."];
 
+//loop from assignment C
 
+// var counter = 0;
+// //set up while loop;
+// while (counter <=9){
+//     console.log(tweets[counter]);
+//     counter = counter +1;
+// }
+
+//For assignment E : Array of objects with tweet,username,date,age.
 var post = [
     {
         tweet : "My favorite colour is purple.",
@@ -73,7 +82,7 @@ var post = [
     }
 ];
 
-
+//function to filter posts whose user was over >=18
 function tweeter(object){
     var a = object.age;
     if (a >= 18){
@@ -82,60 +91,16 @@ function tweeter(object){
         return false;
     }
 }
-var answer = post.filter(tweeter)
-console.log(answer);
-// var k = answer[1].tweet;
-// var r = [];
-// r.push(k);
-// r.push("hello sunshine");
-// console.log(r);
 
+//calling the function to filter
+var answer = post.filter(tweeter);
 
+//making a loop to go through the filters results and collect their tweets into a new array
+var array = [];
+var length = answer.length;
 
-
-// var a =
-//     {
-//         tweet : "My favorite colour is purple.",
-//         username : "purpleLover",
-//         created_at : "05-01-2010",
-//         age : 18
-//     }
-
-
-
-
-// function temp(object){
-//     var b = object.age
-//     if (b >= 18){
-//         return true;
-//     }else{
-//         return false;
-//     }
-    
-// }
-
-// console.log(temp(a));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var counter = 0;
-// //set up while loop;
-// while (counter <=9){
-//     console.log(tweets[counter]);
-//     counter = counter +1;
-// }
-
+for (var counter =0; counter < length; counter++){
+    var collected = answer[counter].tweet;
+    array.push(collected);
+}
+// console.log(array);
